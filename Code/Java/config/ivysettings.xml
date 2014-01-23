@@ -1,0 +1,13 @@
+<ivysettings>
+	<settings defaultResolver="chained" />
+	<include url="${ivy.default.settings.dir}/ivysettings-local.xml" />
+	<resolvers>  
+        <chain name="chained" returnFirst="true">
+            <ibiblio name="ibiblio" m2compatible="true"/>
+			<filesystem name="internal">
+                <artifact pattern="C:\temp\lib\cache\[organization]-[revision]/lib/[module].jar" />
+                <artifact pattern="C:\temp\lib\cache\[organization]-[revision]/[module].jar" />
+            </filesystem>
+		</chain>  
+    </resolvers> 
+</ivysettings>

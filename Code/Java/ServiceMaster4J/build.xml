@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns:ivy="antlib:org.apache.ivy.ant" default="compile.test" basedir="." name="ServiceMaster4J">
+	<property environment="env"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="streamcipher.dir.root" value="../"/>
+	<property name="streamcipher.dir.lib" value="${streamcipher.dir.root}/lib"/>
+	<property name="streamcipher.dir.config" value="${streamcipher.dir.root}/config"/>
+	<property name="streamcipher.dir.code" value="${streamcipher.dir.root}/code"/>
+	<property name="streamcipher.dir.code.java" value="${streamcipher.dir.code}/Java"/>
+	<property name="ivy.settings.file" location="${streamcipher.dir.config}/ivysettings.xml" />
+	<property name="ivy.default.ivy.user.dir" location="${streamcipher.dir.lib}"/>
+	
+	<path id="lib.classpath.compile" />
+	<path id="lib.classpath.junit" />		
+	<path id="lib.classpath.runtime" />		
+			
+	<target name="retrieve.dependencies" description="--> retrieve dependencies using ivy">
+		<echo message="Retrieving dependencies using configuration: ${retrieve.dependencies.config}" />
+		<ivy:retrieve conf="${retrieve.dependencies.config}"/>
+    </target>
+	
+	<target name="clean" description="--> removing bin directory">
+		<delete dir="bin" />
+	</target>
+	
+	<target name="prepare" depends="clean" description="--> preparing for compilation" >
+		<mkdir dir="bin"/>
+		<ivy:configure />
+	</target>
+			
+	<target name="compile.core" depends="prepare" >
+		<antcall target="retrieve.dependencies">
+					<param name="retrieve.dependencies.config" value="core" />
+		</antcall>
+		<ivy:cachepath pathid="lib.classpath.compile" conf="core"/>
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<echo message="Using Java version ${ant.java.version}."/>
+		<pathconvert property="lib.classpath.compile.string" refid="lib.classpath.compile"/>
+		<echo message="Using classpath ${lib.classpath.compile.string}"/>
+				
+		<javac  destdir="bin" includeantruntime="false" source="${ant.java.version}" target="${ant.java.version}">
+			<src path="src/main/java"/>
+			<classpath refid="lib.classpath.compile"/>
+		</javac>
+	</target>
+	
+	<target name="compile.test" depends="compile.core" >
+		<antcall target="retrieve.dependencies">
+			<param name="retrieve.dependencies.config" value="junit" />
+		</antcall>
+		<ivy:cachepath pathid="lib.classpath.junit" conf="junit"/>
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<echo message="Using Java version ${ant.java.version}."/>
+		<pathconvert property="lib.classpath.junit.string" refid="lib.classpath.junit"/>
+		<echo message="Using classpath ${lib.classpath.junit.string}"/>
+					
+		<javac  destdir="bin" includeantruntime="false" source="${ant.java.version}" target="${ant.java.version}">
+			<src path="src/test/java"/>
+			<src path="src/integration/java"/>
+			<classpath refid="lib.classpath.junit"/>
+		</javac>
+	</target>
+
+	<target name="test" depends="compile.test"/>
+	
+	<target name="package"/>
+	
+	<target name="deploy" depends="package"/>
+		
+</project>
