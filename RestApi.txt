@@ -1,0 +1,18 @@
+http://localhost:8080
+	/rest/sm4j
+		/admin
+			/view
+			/search
+			/put?serviceName=b&instance=a&hostname&jmxPort=y
+			/remove
+		/<serviceId>
+		/<serviceId>/start
+		/<serviceId>/stop
+		/<serviceId/checkHealth
+		/<serviceId>/jmx
+				/<attribute>
+				/<operation>
+		/control
+			/startAll?hostname=a&serviceName=b&instance=c
+			/stopAll?hostname=a&serviceName=b&instance=c
+			

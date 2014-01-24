@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster.config;
+package com.streamcipher.sm4j.config;
 
 import java.util.Arrays;
 
@@ -11,8 +11,8 @@ import org.apache.log4j.Logger;
 import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 import org.springframework.context.annotation.Bean;
 
-import com.streamcipher.svcmaster.webservice.RegistryResource;
-import com.streamcipher.svcmaster.webservice.RestWebServiceEndPoint;
+import com.streamcipher.sm4j.webservice.RestWebServiceEndPoint;
+import com.streamcipher.sm4j.webservice.resources.AdministrationResource;
 
 public class DependencyWebService {
     
@@ -40,8 +40,8 @@ public class DependencyWebService {
     }
 
     @Bean
-    public RegistryResource getRegistryResource() {
-	return new RegistryResource();
+    public AdministrationResource getRegistryResource() {
+	return new AdministrationResource();
     }
 
     @Bean

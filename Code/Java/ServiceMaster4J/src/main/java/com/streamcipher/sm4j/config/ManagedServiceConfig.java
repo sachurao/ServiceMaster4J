@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster.config;
+package com.streamcipher.sm4j.config;
 
 /**
  * Represents each service that will be controlled via ServiceMaster.

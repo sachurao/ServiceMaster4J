@@ -9,8 +9,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.streamcipher.svcmaster.config.CsvServiceConfigReader;
-import com.streamcipher.svcmaster.config.ManagedServiceConfig;
+import com.streamcipher.sm4j.config.CsvServiceConfigReader;
+import com.streamcipher.sm4j.config.ManagedServiceConfig;
 
 @RunWith(JUnit4.class)
 public class CsvServiceConfigReaderTest {

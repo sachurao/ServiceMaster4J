@@ -1,11 +1,11 @@
-package com.streamcipher.svcmaster.config;
+package com.streamcipher.sm4j.config;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.streamcipher.svcmaster.webservice.IWebServerWrapper;
-import com.streamcipher.svcmaster.webservice.WebServerWrapper;
+import com.streamcipher.sm4j.webservice.IWebServerWrapper;
+import com.streamcipher.sm4j.webservice.WebServerWrapper;
 
 @Configuration
 public class DependencyStartup {

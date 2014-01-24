@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster.webservice;
+package com.streamcipher.sm4j.webservice;
 
 import java.io.IOException;
 

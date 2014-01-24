@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster.config;
+package com.streamcipher.sm4j.config;
 
 import java.io.BufferedReader;
 import java.io.File;

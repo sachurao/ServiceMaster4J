@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster;
+package com.streamcipher.sm4j;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.concurrent.Callable;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
-import com.streamcipher.svcmaster.config.IServiceConfigReader;
-import com.streamcipher.svcmaster.config.ManagedServiceConfig;
+import com.streamcipher.sm4j.config.IServiceConfigReader;
+import com.streamcipher.sm4j.config.ManagedServiceConfig;
 
 /**
  * Callable that executes all tasks necessary to initialise ServiceMaster and

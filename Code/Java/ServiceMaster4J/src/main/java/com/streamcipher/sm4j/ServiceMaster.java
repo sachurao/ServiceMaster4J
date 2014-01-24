@@ -1,13 +1,13 @@
-package com.streamcipher.svcmaster;
+package com.streamcipher.sm4j;
 
 import java.util.Collection;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
-import com.streamcipher.svcmaster.config.ManagedServiceConfig;
-import com.streamcipher.svcmaster.webservice.IWebServerWrapper;
-import com.streamcipher.svcmaster.webservice.RegistryResource;
+import com.streamcipher.sm4j.config.ManagedServiceConfig;
+import com.streamcipher.sm4j.webservice.IWebServerWrapper;
+import com.streamcipher.sm4j.webservice.resources.AdministrationResource;
 
 public class ServiceMaster {
 
@@ -25,7 +25,7 @@ public class ServiceMaster {
 	log.info("Starting up ServiceMaster...");
 
 	webServer.start(8080);
-	RegistryResource.setManagedServices(managedServices);
+	AdministrationResource.setManagedServices(managedServices);
 	
 
 	// TODO Display configured services on ServiceMonitor page

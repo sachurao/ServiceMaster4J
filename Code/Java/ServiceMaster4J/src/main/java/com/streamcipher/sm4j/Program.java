@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster;
+package com.streamcipher.sm4j;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.streamcipher.svcmaster.config.DependencyStartup;
+import com.streamcipher.sm4j.config.DependencyStartup;
 
 
 public class Program {

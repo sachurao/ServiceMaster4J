@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster.webservice;
+package com.streamcipher.sm4j.webservice;
 
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.apache.log4j.Logger;
@@ -9,7 +9,7 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
-import com.streamcipher.svcmaster.config.DependencyWebService;
+import com.streamcipher.sm4j.config.DependencyWebService;
 
 public class WebServerWrapper implements IWebServerWrapper {
 

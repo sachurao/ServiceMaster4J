@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster;
+package com.streamcipher.sm4j;
 
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;

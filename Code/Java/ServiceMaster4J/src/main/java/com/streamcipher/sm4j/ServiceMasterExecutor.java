@@ -1,4 +1,4 @@
-package com.streamcipher.svcmaster;
+package com.streamcipher.sm4j;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
