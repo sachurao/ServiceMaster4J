@@ -13,6 +13,6 @@ To run the project in Eclipse, import project into existing workspace and set th
 
 environment variable:
 
-STREAMCIPHER_HOME=<Path_to_source_location>\ServiceMaster4J\Code\Java
+SM4J_HOME=<Path_to_source_location>\ServiceMaster4J\Code\Java
 
 
